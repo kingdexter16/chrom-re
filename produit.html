@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peintures Naturelles - Chromère</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .modal {
+      display: none;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .card.hovering {
+      outline: 2px dashed orange;
+      outline-offset: 4px;
+      animation: pulse 1s infinite;
+    }
+    @keyframes pulse {
+      0% { outline-color: #fb923c; }
+      50% { outline-color: #facc15; }
+      100% { outline-color: #fb923c; }
+    }
+  </style>
+</head>
+<body class="bg-yellow-50 text-gray-800">
+  <header class="bg-yellow-200 py-6 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-orange-700">Peintures Naturelles</h1>
+      <a href="index.html" class="text-orange-700 hover:underline">Retour à Chromère</a>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto py-16 px-4">
+    <h2 class="text-4xl font-bold text-center text-orange-800 mb-12">Notre Collection de Peintures</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-4 rounded shadow card" data-title="Hibiscus Profond" data-info="Cette peinture offre une teinte violacée profonde avec des reflets apaisants, parfaite pour des intérieurs méditatifs." data-img="h.JPEG">
+        <img src="h.JPEG" alt="Violet d'hibiscus" class="w-full h-48 object-cover rounded">
+        <h3 class="mt-4 text-xl font-semibold text-orange-700">Violet d'hibiscus</h3>
+        <p class="text-sm text-gray-600">Peintures naturelle violette à base d'une infusion de feuilles d'hibiscus.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow card" data-title="Éclat de Curcuma" data-info="Un jaune éclatant inspiré du soleil tropical, parfait pour dynamiser cuisines et ateliers d’art." data-img="c.JPEG">
+        <img src="c.JPEG" alt="Jaune Curcuma" class="w-full h-48 object-cover rounded">
+        <h3 class="mt-4 text-xl font-semibold text-orange-700">Jaune Curcuma</h3>
+        <p class="text-sm text-gray-600">Peinture jaune vif et lumineux à base de l'extrait des pigments des racines du curcuma.</p>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow card" data-title="Rouge Racine" data-info="Une teinte rouge terreuse, issue de la betterave, idéale pour créer une atmosphère chaleureuse et rustique." data-img="b.JPEG">
+        <img src="b.JPEG" alt="Rouge de betterave" class="w-full h-48 object-cover rounded">
+        <h3 class="mt-4 text-xl font-semibold text-orange-700">Violet de la betterave</h3>
+        <p class="text-sm text-gray-600">Peinture violette à base de l'extrait des pigments de la betterave.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="modal" class="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+    <div class="bg-white max-w-md w-full mx-auto p-6 rounded shadow-lg relative">
+      <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-red-500">&times;</button>
+      <img id="modalImg" src="" alt="" class="w-full h-64 object-cover rounded mb-4">
+      <h3 id="modalTitle" class="text-2xl font-bold text-orange-700 mb-2"></h3>
+      <p id="modalText" class="text-gray-700 mb-4"></p>
+      <button class="bg-orange-600 text-white px-4 py-2 rounded hover:bg-orange-700">Commander cette peinture</button>
+    </div>
+  </div>
+
+  <footer class="bg-yellow-200 py-6 mt-16">
+    <div class="text-center text-gray-700">&copy; 2025 Chromère - Peintures Naturelles</div>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalText = document.getElementById('modalText');
+    const closeModal = document.getElementById('closeModal');
+    let hoverTimeout;
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.classList.add('hovering');
+        hoverTimeout = setTimeout(() => {
+          showModal(card);
+        }, 10000);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        clearTimeout(hoverTimeout);
+        card.classList.remove('hovering');
+      });
+
+      card.addEventListener('click', () => {
+        clearTimeout(hoverTimeout);
+        card.classList.remove('hovering');
+        showModal(card);
+      });
+    });
+
+    function showModal(card) {
+      modal.classList.add('active');
+      modalImg.src = card.getAttribute('data-img');
+      modalTitle.textContent = card.getAttribute('data-title');
+      modalText.textContent = card.getAttribute('data-info');
+    }
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

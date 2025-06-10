@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chromère</title>
+  <link rel="icon" type="image/png" href="p.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+  --jaune-clair: #FFF8E1;
+  --jaune: #FFEB3B;
+  --orange-clair: #FFE0B2;
+  --orange: #FF9800;
+  --orange-foncé: #EF6C00;
+  --texte-principal: #3E2723;
+}
+
+/* Fond général */
+body {
+  background-color: var(--jaune-clair);
+  color: var(--texte-principal);
+}
+
+/* En-tête */
+header {
+  background-color: var(--jaune);
+  color: var(--texte-principal);
+}
+
+nav a {
+  color: var(--texte-principal);
+}
+
+nav a:hover {
+  color: var(--orange-foncé);
+}
+
+/* Boutons principaux */
+a.inline-block,
+button {
+  background-color: var(--orange);
+  color: white;
+}
+
+a.inline-block:hover,
+button:hover {
+  background-color: var(--orange-foncé);
+}
+
+/* Sections alternées */
+section:nth-child(even) {
+  background-color: var(--orange-clair);
+}
+
+/* Titres */
+h1, h2, h3 {
+  color: var(--orange-foncé);
+}
+
+/* Cartes (services, projets, plantes) */
+.bg-white {
+  background-color: #FFF3E0;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px rgba(255, 152, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: var(--orange-foncé);
+  color: white;
+}
+
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="p.png" alt="Logo Chromère" class="h-10 w-auto">
+        <span class="text-xl font-bold text-green-700">Chromère</span>
+      </div>
+      <nav class="space-x-6 hidden md:block">
+        <a href="#mission" class="hover:text-green-600">Mission</a>
+        <a href="#services" class="hover:text-green-600">Services</a>
+        <a href="#projets" class="hover:text-green-600">Projets</a>
+        <a href="#plantes" class="hover:text-green-600">Plantes</a>
+        <a href="#produits" class="hover:text-green-600">Produits</a>
+        <a href="#contact" class="hover:text-green-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-green-100 py-24 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold text-green-800">Bienvenue chez Chromère</h1>
+    <p class="mt-4 text-xl text-gray-700">Peinture écologique à base de plantes tinctoriales</p>
+    <a href="#mission" class="mt-6 inline-block bg-green-700 text-white px-6 py-3 rounded-full hover:bg-green-800">En savoir plus</a>
+  </section>
+
+  <!-- Mission Section -->
+  <section id="mission" class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Notre Mission</h2>
+    <p class="text-gray-700 text-center max-w-3xl mx-auto">Chez Chromère, nous valorisons les plantes tinctoriales pour créer des peintures naturelles et durables. Notre mission est de promouvoir des alternatives écologiques à la peinture chimique, en soutenant l'agriculture locale et l'innovation artisanale.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-gray-100 py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12">Nos Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Production artisanale</h3>
+          <p>Peintures à base de plantes locales, fabriquées à la main avec respect de l’environnement.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Conseil & formation</h3>
+          <p>Accompagnement dans le choix de peintures naturelles et formations sur les plantes tinctoriales.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-semibold mb-2">Recherche & innovation</h3>
+          <p>Développement de nouvelles teintes et techniques respectueuses de la biodiversité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets Section -->
+  <section id="projets" class="py-20 px-4 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Nos Projets</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h3 class="text-2xl font-semibold mb-2">Jardin Tinctorial</h3>
+        <p>Création d’un jardin expérimental de plantes tinctoriales pour tester, produire et transmettre les savoirs liés à la couleur naturelle.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h3 class="text-2xl font-semibold mb-2">Couleurs Vivantes</h3>
+        <p>Ateliers et expositions autour des pigments végétaux et de leur intégration dans l’art contemporain et l’artisanat.</p>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow">
+        <h3 class="text-2xl font-semibold mb-2">La Compagnie de Peintures Chromère</h3>
+        <p>Développement et mise en marché d'une gamme de peintures naturelles issues de plantes tinctoriales cultivées de manière durable.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="plantes" class="bg-gray-100 py-20 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">Plantes Tinctoriales</h2>
+      <p class="text-gray-700 mb-6 max-w-2xl mx-auto">Voici quelques plantes que nous utilisons pour créer nos teintes naturelles :</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-4 rounded shadow">
+          <img src="h.JPEG" alt="Indigofera" class="w-full h-40 object-cover rounded mb-4">
+          <h3 class="text-xl font-semibold">Hibiscus</h3>
+          <p>Fournit des teintes rouge profondes à partir de ses feuilles fermentées.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <img src="c.JPEG" alt="Gaude" class="w-full h-40 object-cover rounded mb-4">
+          <h3 class="text-xl font-semibold">Curcuma</h3>
+          <p>Sa racine utilisée depuis l’Antiquité pour obtenir un jaune lumineux.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <img src="b.JPEG" alt="Indigofera" class="w-full h-40 object-cover rounded mb-4">
+          <h3 class="text-xl font-semibold">Betterave</h3>
+          <p>Betterave Fournit des teintes violet .</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produits Section -->
+  <section id="produits" class="py-20 px-4 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-8">Nos Peintures</h2>
+    <p class="text-gray-700 mb-6 max-w-2xl mx-auto">Découvrez notre collection de peintures végétales aux couleurs vibrantes, fabriquées à partir de plantes tinctoriales locales.</p>
+    <a href="produit.html" class="inline-block bg-orange-500 text-white px-6 py-3 rounded-full hover:bg-orange-600">Voir les Produits</a>
+  </section>
+
+  <section id="contact" class="max-w-4xl mx-auto my-16 px-4 py-8 bg-white rounded shadow">
+  <h2 class="text-3xl font-bold text-orange-700 mb-6 text-center">Nous contacter</h2>
+  <form action="https://formspree.io/f/xldndzqg" method="POST" class="grid gap-4">
+    <input type="text" name="name" placeholder="Votre nom" required class="p-3 border border-yellow-300 rounded" />
+    <input type="email" name="email" placeholder="Votre email" required class="p-3 border border-yellow-300 rounded" />
+    <textarea name="message" placeholder="Votre message" rows="5" required class="p-3 border border-yellow-300 rounded"></textarea>
+    <button type="submit" class="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700 transition">Envoyer le message</button>
+  </form>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="max-w-6xl mx-auto text-center">
+      &copy; 2025 Chromère. Tous droits réservés.
+    </div>
+    Développer par Dorvilien Géniphile élève du secondaire 3
+  </footer>
+
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Message envoyé !');
+    });
+  </script>
+</body>
+</html>
+ 
